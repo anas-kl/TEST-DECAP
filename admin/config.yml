@@ -34,7 +34,7 @@ site_url: https://anas-kl.github.io
 # Where uploaded images get committed in the repo, and how the
 # saved path is written into content.json.
 media_folder: "images/uploads"
-public_folder: "/images/uploads"
+public_folder: "images/uploads"
 
 collections:
   - name: "homepage"
