@@ -1,6 +1,6 @@
 {
   "title": "Bienvenue sur le site test decap",
   "subtitle": "Cette page est éditable depuis /admin it is work",
-  "hero_image": "/images/uploads/🚀-ideas-that-inspire.jpg",
+  "hero_image": "https://scontent.ftng3-2.fna.fbcdn.net/v/t39.30808-6/765855320_10227536721158462_1743351927364057246_n.jpg?stp=dst-jpg_tt6&cstp=mx1122x1402&ctp=s1122x1402&_nc_cat=104&ccb=1-7&_nc_sid=833d8c&_nc_ohc=fTUo0Auz3UsQ7kNvwG5LvWC&_nc_oc=AdqxkV1F7KHdEIzpU3vH7LOTHwvnbKV8LxJRhyWUWZV13g1WQmuQBKaFt5PUOKL-8qU&_nc_zt=23&_nc_ht=scontent.ftng3-2.fna&_nc_gid=u_OkvtWxR3ET80YmhBuM9g&_nc_ss=7b2a8&oh=00_AQHcY5fLYdANyB8TLYg8xWuxFonXsiYhWvyokAoJgkacJQ&oe=6A8197EC",
   "body": "Si vous modifiez ce texte depuis le panneau Decap CMS et que ça apparaît ici après publication, toute la chaîne fonctionne : GitHub Pages + Decap CMS + DecapBridge + upload d'image."
 }
