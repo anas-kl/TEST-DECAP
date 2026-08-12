@@ -5,10 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex" />
     <title>Webnary Test — Admin</title>
+    <link rel="icon" href="data:,">
   </head>
   <body>
-    <!-- Loads the Decap CMS app itself. Use a version above v3.8.3 if you
-         want "Login with Google" / "Login with Microsoft" via DecapBridge PKCE. -->
     <script src="https://unpkg.com/decap-cms@^3.8.3/dist/decap-cms.js"></script>
+
+    <script>
+      // Load the site's real stylesheet into the preview pane, so editing
+      // shows the actual page look instead of plain unstyled text.
+      // Relative path (not "/style.css") so this still works correctly
+      // on a GitHub Pages project site like /TEST-DECAP/.
+      CMS.registerPreviewStyle("../style.css");
+
+      var HomepagePreview = createClass({
+        render: function () {
+          var entry = this.props.entry;
+          var title = entry.getIn(["data", "title"]);
+          var subtitle = entry.getIn(["data", "subtitle"]);
+          var body = entry.getIn(["data", "body"]);
+          var heroImage = entry.getIn(["data", "hero_image"]);
+
+          return h(
+            "div",
+            null,
+            heroImage &&
+              h("img", {
+                className: "hero-image",
+                src: this.props.getAsset(heroImage),
+                style: { display: "block", margin: "0 auto 1.5rem" },
+              }),
+            h("div", { className: "hero-text", style: { textAlign: "center" } },
+              h("h1", null, title),
+              h("p", null, subtitle)
+            ),
+            h("div", { className: "content", style: { maxWidth: "640px", margin: "2rem auto" } },
+              h("p", null, body)
+            )
+          );
+        },
+      });
+
+      CMS.registerPreviewTemplate("homepage", HomepagePreview);
+    </script>
   </body>
 </html>
