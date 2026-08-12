@@ -1,6 +1,6 @@
 {
-  "title": "Bienvenue sur le site test",
-  "subtitle": "Cette page est éditable depuis /admin",
-  "hero_image": "",
+  "title": "Bienvenue sur le site test decap",
+  "subtitle": "Cette page est éditable depuis /admin it is work",
+  "hero_image": "/images/uploads/🚀-ideas-that-inspire.jpg",
   "body": "Si vous modifiez ce texte depuis le panneau Decap CMS et que ça apparaît ici après publication, toute la chaîne fonctionne : GitHub Pages + Decap CMS + DecapBridge + upload d'image."
 }
