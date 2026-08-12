@@ -7,12 +7,29 @@
 # the one below before pushing for real. This is NOT guessable —
 # it's created per-site when you register on their dashboard.
 # ─────────────────────────────────────────────────────────────
+
+# Use DecapBridge classic auth (required)
 backend:
-  name: github
-  repo: YOUR_GITHUB_USERNAME/YOUR_REPO_NAME   # e.g. webnary/test-site
+  name: git-gateway
+  repo: anas-kl/TEST-DECAP
   branch: main
-  base_url: https://auth.decapbridge.com      # from DecapBridge "Getting started" step
-  auth_endpoint: auth
+  identity_url: https://auth.decapbridge.com/sites/66095419-4ee3-4b6b-88f9-587d4b1b948d
+  gateway_url: https://gateway.decapbridge.com
+
+  # See who did what (optional)
+  commit_messages:
+    create: Create {{collection}} “{{slug}}” - {{author-name}} <{{author-login}}> via DecapBridge
+    update: Update {{collection}} “{{slug}}” - {{author-name}} <{{author-login}}> via DecapBridge
+    delete: Delete {{collection}} “{{slug}}” - {{author-name}} <{{author-login}}> via DecapBridge
+    uploadMedia: Upload “{{path}}” - {{author-name}} <{{author-login}}> via DecapBridge
+    deleteMedia: Delete “{{path}}” - {{author-name}} <{{author-login}}> via DecapBridge
+    openAuthoring: Message {{message}} - {{author-name}} <{{author-login}}> via DecapBridge
+
+# Better Decap + Bridge logo (optional)
+logo_url: https://decapbridge.com/decapcms-with-bridge.svg
+
+# Add site links in Decap CMS (optional)
+site_url: https://anas-kl.github.io
 
 # Where uploaded images get committed in the repo, and how the
 # saved path is written into content.json.
