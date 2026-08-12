@@ -1,0 +1,33 @@
+# ─────────────────────────────────────────────────────────────
+# BACKEND — placeholder only.
+# After you sign up at https://decapbridge.com and register this
+# repo as a site, their dashboard generates the real block to put
+# here (it includes a site-specific gateway URL / auth endpoint on
+# their infrastructure). Paste that generated block in place of
+# the one below before pushing for real. This is NOT guessable —
+# it's created per-site when you register on their dashboard.
+# ─────────────────────────────────────────────────────────────
+backend:
+  name: github
+  repo: YOUR_GITHUB_USERNAME/YOUR_REPO_NAME   # e.g. webnary/test-site
+  branch: main
+  base_url: https://auth.decapbridge.com      # from DecapBridge "Getting started" step
+  auth_endpoint: auth
+
+# Where uploaded images get committed in the repo, and how the
+# saved path is written into content.json.
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "homepage"
+    label: "Page d'accueil"
+    files:
+      - name: "home"
+        label: "Contenu principal"
+        file: "content.json"
+        fields:
+          - { label: "Titre", name: "title", widget: "string" }
+          - { label: "Sous-titre", name: "subtitle", widget: "string" }
+          - { label: "Image principale", name: "hero_image", widget: "image", required: false }
+          - { label: "Texte", name: "body", widget: "text" }
