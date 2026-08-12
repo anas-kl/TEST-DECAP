@@ -31,10 +31,21 @@ logo_url: https://decapbridge.com/decapcms-with-bridge.svg
 # Add site links in Decap CMS (optional)
 site_url: https://anas-kl.github.io
 
-# Where uploaded images get committed in the repo, and how the
-# saved path is written into content.json.
+
+# Fixed: no leading "/" — this repo is served from a GitHub Pages project
+# path (/TEST-DECAP/), and a leading slash was resolving to the domain
+# root instead, which is why the uploaded image 404'd earlier.
 media_folder: "images/uploads"
 public_folder: "images/uploads"
+
+# Lets the CMS header show a "View Site" link back to the live page.
+site_url: https://anas-kl.github.io/TEST-DECAP/
+display_url: https://anas-kl.github.io/TEST-DECAP/
+
+# Branded logo on the login screen, kept visible in the header once logged in.
+logo:
+  src: https://anas-kl.github.io/TEST-DECAP/images/logo.svg
+  show_in_header: true
 
 collections:
   - name: "homepage"
