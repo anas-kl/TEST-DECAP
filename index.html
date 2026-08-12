@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Webnary — Site Test</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="hero">
+    <img id="hero-image" src="" alt="" class="hero-image" />
+    <div class="hero-text">
+      <h1 id="hero-title">Chargement…</h1>
+      <p id="hero-subtitle"></p>
+    </div>
+  </header>
+
+  <main>
+    <section class="content">
+      <p id="body-text"></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Site de test — Webnary Studio. Modifiable via <code>/admin</code>.</p>
+  </footer>
+
+  <script>
+    // Fetch content.json fresh every time (cache-busted) so edits made in
+    // Decap CMS show up on reload without needing a build step.
+    fetch('content.json?t=' + Date.now())
+      .then(res => res.json())
+      .then(data => {
+        document.title = data.title + ' — Webnary';
+        document.getElementById('hero-title').textContent = data.title;
+        document.getElementById('hero-subtitle').textContent = data.subtitle;
+        document.getElementById('body-text').textContent = data.body;
+
+        const img = document.getElementById('hero-image');
+        if (data.hero_image) {
+          img.src = data.hero_image;
+          img.alt = data.title;
+        } else {
+          img.style.display = 'none';
+        }
+      })
+      .catch(err => {
+        document.getElementById('hero-title').textContent = 'Erreur de chargement du contenu';
+        console.error(err);
+      });
+  </script>
+</body>
+</html>
